@@ -95,9 +95,6 @@ def fetch_flight_data(token):
 
 
 st.title("🚨 스마트 항공 관제탑 (한반도 상공)")
-
-col_btn, col_info = st.columns([1, 3])
-
 st.caption(f"자동 새로고침: 10초마다 (누적 {refresh_count}회) · 마지막 갱신: {datetime.now().strftime('%H:%M:%S')}")
 
 try:
