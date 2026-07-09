@@ -94,7 +94,7 @@ def fetch_flight_data(token):
             time.sleep(3)
 
 
-st.title("🚨 AI 스마트 항공 관제탑 (한반도 상공)")
+st.title("🚨 스마트 항공 관제탑 (한반도 상공)")
 
 col_btn, col_info = st.columns([1, 3])
 with col_btn:
