@@ -7,7 +7,7 @@ import time
 from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
 
-st.set_page_config(page_title="AI 스마트 항공 관제탑", layout="wide")
+st.set_page_config(page_title="스마트 항공 관제탑", layout="wide")
 
 # ─────────────────────────────────────────────
 # 10초마다 전체 스크립트 자동 재실행
