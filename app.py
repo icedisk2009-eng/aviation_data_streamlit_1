@@ -97,12 +97,8 @@ def fetch_flight_data(token):
 st.title("🚨 스마트 항공 관제탑 (한반도 상공)")
 
 col_btn, col_info = st.columns([1, 3])
-with col_btn:
-    if st.button("🔄 수동 새로고침"):
-        fetch_flight_data.clear()  # 항공 데이터 캐시만 지움 (토큰 캐시는 그대로 유지)
-        st.rerun()
-with col_info:
-    st.caption(f"자동 새로고침: 10초마다 (누적 {refresh_count}회) · 마지막 갱신: {datetime.now().strftime('%H:%M:%S')}")
+
+st.caption(f"자동 새로고침: 10초마다 (누적 {refresh_count}회) · 마지막 갱신: {datetime.now().strftime('%H:%M:%S')}")
 
 try:
     with st.spinner("인증 토큰 발급 중..."):
