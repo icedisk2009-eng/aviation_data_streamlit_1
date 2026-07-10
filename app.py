@@ -5,6 +5,9 @@ import numpy as np
 import pydeck as pdk
 import time
 from datetime import datetime
+from zoneinfo import ZoneInfo
+
+KST = ZoneInfo("Asia/Seoul")
 from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(page_title="스마트 항공 관제탑", layout="wide")
@@ -95,7 +98,7 @@ def fetch_flight_data(token):
 
 
 st.title("🚨 스마트 항공 관제탑 (한반도 상공)")
-st.caption(f"자동 새로고침: 10초마다 (누적 {refresh_count}회) · 마지막 갱신: {datetime.now().strftime('%H:%M:%S')}")
+st.caption(f"자동 새로고침: 10초마다 (누적 {refresh_count}회) · 마지막 갱신: {datetime.now(KST).strftime('%H:%M:%S')}")
 
 try:
     with st.spinner("인증 토큰 발급 중..."):
@@ -194,7 +197,7 @@ if df is not None and not df.empty:
         if alerts.empty:
             st.info("현재 위험 항공기 없음.")
         else:
-            now_str = datetime.now().strftime("%H:%M:%S")
+            now_str = datetime.now(KST).strftime("%H:%M:%S")
             for _, row in alerts.iterrows():
                 st.markdown(
                     f"""
